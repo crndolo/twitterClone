@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+TEMPLATE_DIRS = ('template',)
 
 
 # Quick-start development settings - unsuitable for production
@@ -58,8 +59,12 @@ WSGI_APPLICATION = 'twitterClone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'twitterClonedb',
+        'USER':'root',
+        'PASSWORD':'root',
+        'HOST':'',
+        'PORT':'',
     }
 }
 
@@ -68,7 +73,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -81,3 +86,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = ' '
+
+STATICFILES_DIRS = (
+   ('assets', '/home/raphael/twitterClone/static'),
+)
